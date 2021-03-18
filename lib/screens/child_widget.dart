@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum AvailableNumber { First, Second, Third }
+enum AvailableNumber { First, Second, Third, Fourth }
 
 class ChildWidget extends StatelessWidget {
   final AvailableNumber number;
@@ -15,15 +15,17 @@ class ChildWidget extends StatelessWidget {
       file = "first";
     } else if (number == AvailableNumber.Second) {
       file = "second";
-    } else {
+    } else if (number == AvailableNumber.Third) {
       file = "third";
+    } else {
+      file = "fourth";
     }
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text(
-          "$file screen",
+          "$file screen: Use cursor to swipe for next screen",
           style: TextStyle(fontSize: 36.0),
         ),
         //Flexible(child: Image.asset("assets/undraw/$file.png"))
